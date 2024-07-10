@@ -7,9 +7,7 @@ function Home({country, category, apiKey}) {
         try {
         const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
         const reponse = await fetch(URL);
-        console.log(reponse)
         const data = await reponse.json();
-        console.log(data.articles[0]);   
          setArticles(data.articles);
         } catch (error) {
           console.log("data not fetched!");
@@ -17,14 +15,14 @@ function Home({country, category, apiKey}) {
     }
     useEffect(()=>{
         fetchData();
-    },[])
+    },[category])
 
   return (
     <div className='w-full h-full flex justify-evenly py-5 m-auto'>
-        <div className='w-[90%] h-auto flex flex-wrap justify-evenly items-center'>
+        <div className='w-[90%] h-auto flex md:flex-row flex-col flex-wrap justify-evenly items-center'>
         {
             articles.map((item)=>(
-                <NewsItem key={item.title} title={item.title} description={item.description} image={item.urlToImage} newUrl={item.url} authorName={item.author} />
+                <NewsItem key={item.title} title={item.title} description={item.description} image={item.urlToImage} newsUrl={item.url} authorName={item.author} />
             ))
           }
         </div>

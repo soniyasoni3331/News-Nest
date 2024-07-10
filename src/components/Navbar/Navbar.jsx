@@ -2,44 +2,6 @@ import React from 'react'
 import Logo from '../../assets/logo.png'
 import {NavLink, Link} from 'react-router-dom'
 
-// const menu = [
-//   {
-//       id: 1,
-//       name: "Home",
-//       link: "/",
-//   },
-//   {
-//       id: 2,
-//       name: "Bussiness",
-//       link: "/bussiness",
-//   },
-//   {
-//       id: 3,
-//       name: "Entertainment",
-//       link: "/entertainment",
-//   },
-//   {
-//       id: 4,
-//       name: "General",
-//       link: "/general",
-//   },
-//   {
-//     id: 5,
-//     name: "Health",
-//     link: "/health",
-//   },
-//   {
-//     id: 6,
-//     name: "Sports",
-//     link: "/sports",
-//   },
-//   {
-//     id: 7,
-//     name: "Technology",
-//     link: "/technology",
-//   },
-//   ]
-
 function Navbar() {
   return (
     <div className='w-full h-auto py-2 flex-col justify-between bg-black'>
@@ -53,63 +15,64 @@ function Navbar() {
               <li>
                 <NavLink
                 to="/"
-                className={({isActive})=>`hover:bg-black hover:text-white rounded-sm px-5 py-2 font-semibold bg-[#FFCA2A] text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[rgb(255,202,42)] " : "text-white"}`}
+                className={({isActive})=>` rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Home
                 </NavLink>
               </li>
+              
               <li>
                 <NavLink
-                to="general"
-                className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
-                >
-                  General
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                to="business"
-                className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
+                to="/business"
+                className={({isActive})=>`rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Business
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                to="/"
-                className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
+                to="/entertainment"
+                className={({isActive})=>`rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Entertainment
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                to="/"
-                className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
+                to="/health"
+                className={({isActive})=>`rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Health
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                to="/"
-                className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
+                to="/general"
+                className={({isActive})=>`rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
+                >
+                  General
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                to="/science"
+                className={({isActive})=>`rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Science
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                to="/"
-                className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
+                to="/sports"
+                className={({isActive})=>`rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Sports
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                to="/"
-                className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
+                to="/technology"
+                className={({isActive})=>`rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-black bg-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Technology
                 </NavLink>
