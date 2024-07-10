@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import NewsItem from '../NewsItem/NewsItem.jsx'
 
-
-
-
-function Home() {
+function Home({country, category, apiKey}) {
     const [articles, setArticles] = useState([]);
     const fetchData = async () =>{
-        const URL = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=8276e6b5404a4373b532af4c00b22ff8`//todo -- api key hide
+        try {
+        const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
         const reponse = await fetch(URL);
+        console.log(reponse)
         const data = await reponse.json();
-        console.log(data.articles[0].title);   
+        console.log(data.articles[0]);   
          setArticles(data.articles);
+        } catch (error) {
+          console.log("data not fetched!");
+        }
     }
     useEffect(()=>{
         fetchData();
     },[])
 
   return (
-    <div className='w-full h-auto bg-[#f0c647] flex justify-evenly py-5 m-auto'>
-      {
-        articles.map((item)=>{
-            <NewsItem title={item.title} description={item.description} image={item.imageUrl} authorName={item.urlToImage} />
-        })
-      }
+    <div className='w-full h-full flex justify-evenly py-5 m-auto'>
+        <div className='w-[90%] h-auto flex flex-wrap justify-evenly items-center'>
+        {
+            articles.map((item)=>(
+                <NewsItem key={item.title} title={item.title} description={item.description} image={item.urlToImage} newUrl={item.url} authorName={item.author} />
+            ))
+          }
+        </div>
     </div>
   )
 }

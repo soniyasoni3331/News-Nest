@@ -42,7 +42,7 @@ import {NavLink, Link} from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className='w-screen h-auto flex-col justify-between bg-black'>
+    <div className='w-full h-auto py-2 flex-col justify-between bg-black'>
         {/* logo section */}
             <Link to="/" className='' >
               <img src={Logo} alt="logo" className='h-auto m-auto w-36'/>
@@ -53,7 +53,7 @@ function Navbar() {
               <li>
                 <NavLink
                 to="/"
-                className={({isActive})=>`hover:bg-black hover:text-white rounded-sm px-5 py-2 font-semibold bg-[#FFCA2A] text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
+                className={({isActive})=>`hover:bg-black hover:text-white rounded-sm px-5 py-2 font-semibold bg-[#FFCA2A] text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[rgb(255,202,42)] " : "text-white"}`}
                 >
                   Home
                 </NavLink>
@@ -68,7 +68,7 @@ function Navbar() {
               </li>
               <li>
                 <NavLink
-                to="bussiness"
+                to="business"
                 className={({isActive})=>`bg-black text-white rounded-sm px-5 py-2 font-semibold hover:bg-[#FFCA2A] hover:text-black hover:scale-110 duration-150 ${isActive ? "scale-105 text-[#FFCA2A] " : "text-white"}`}
                 >
                   Business
