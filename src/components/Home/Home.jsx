@@ -10,7 +10,7 @@ function Home({country, category, apiKey}) {
         const data = await reponse.json();
          setArticles(data.articles);
         } catch (error) {
-          console.log("data not fetched!");
+          throw error(error);
         }
     }
     useEffect(()=>{
@@ -18,8 +18,8 @@ function Home({country, category, apiKey}) {
     },[category])
 
   return (
-    <div className='w-full h-full flex justify-evenly py-5 m-auto'>
-        <div className='w-[90%] h-auto flex md:flex-row flex-col flex-wrap justify-evenly items-center'>
+    <div className='w-full h-full flex justify-evenly py-5 m-auto md:mt-4 mt-8'>
+        <div className='w-[90%] h-auto flex md:flex-row flex-col gap-4 flex-wrap justify-evenly items-center'>
         {
             articles.map((item)=>(
                 <NewsItem key={item.title} title={item.title} description={item.description} image={item.urlToImage} newsUrl={item.url} authorName={item.author} />
