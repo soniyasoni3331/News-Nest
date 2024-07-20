@@ -8,7 +8,6 @@ function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () =>{
     setShowMenu(!showMenu);
-    console.log("clicked")
   }
   return (
     <div className='w-full h-auto py-2 flex-col justify-between bg-black'>
@@ -30,7 +29,7 @@ function Navbar() {
           }`
           }>
           <div className={`w-full h-auto my-auto`}>
-           <ul className='flex flex-col justify-center items-center gap-y-40 my-5 text-8xl'>
+           <ul className='flex flex-col justify-center items-center gap-y-28 my-5 py-2 text-8xl'>
            <li>
              <NavLink
              to="/"
