@@ -6,7 +6,7 @@ function Home({country, category, apiKey}) {
     const [error, setError] = useState(null);
     const fetchData = async () =>{
         try {
-        const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
+        const URL = `http://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
         const response = await fetch(URL);
         const data = await response.json();
          setArticles(data.articles ||[]);
