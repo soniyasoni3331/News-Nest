@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import Home from './components/Home/Home.jsx'
 import { createBrowserRouter, createRoutesFromChildren, Outlet, Route} from 'react-router-dom'
 
-const apiKey = import.meta.env.VITE_NEWS_API;
+const apiKey = import.meta.env.VITE_NEWS_NEST_API;
 export const router = createBrowserRouter(createRoutesFromChildren(
   <Route path='/' element={<App/>}>
     <Route path='' element={<Home country="in" category="general" apiKey={apiKey}/>}/>
